@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class collectible here.
+ * Write a description of class Gem here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class collectable extends Actor
+public class Gem extends collectables
 {
     /**
-     * Act - do whatever the collectible wants to do. This method is called whenever
+     * Act - do whatever the Gem wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
