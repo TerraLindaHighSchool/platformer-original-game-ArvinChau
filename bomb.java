@@ -18,7 +18,7 @@ public class bomb extends Obstacle
 
     public void act()
     {
-
+        fall();
     }
 
     protected void fall()

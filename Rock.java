@@ -14,23 +14,23 @@ public class Rock extends Obstacle
      */
     private float yVelocity;
     private final float GRAVITY;
-    
-      public Rock(float gravity)
+
+    public Rock(float gravity)
     {
         GRAVITY = gravity;
     }
 
     public void act()
     {
-
+    fall();
     }
 
     protected void fall()
     { 
-      if(!isOnGround())
-     {
-        yVelocity += GRAVITY;
-        setLocation(getX(), getY() + (int) yVelocity);
-     }
+        if(!isOnGround())
+        {
+            yVelocity += GRAVITY;
+            setLocation(getX(), getY() + (int) yVelocity);
+        }
     }
 }

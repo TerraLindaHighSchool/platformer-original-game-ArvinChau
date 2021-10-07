@@ -16,4 +16,7 @@ public class door extends Actor
     {
         // Add your action code here.
     }
-}
+    
+
+   }
+

@@ -21,6 +21,10 @@ public class level1 extends World
         prepare();
     }
     
+    public void act()
+    {
+        spawn();
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -32,7 +36,7 @@ public class level1 extends World
         door door = new door();
         addObject(door,574,40);
         addObject(new Floor(), 600, 800);
-        Player player = new Player(3, 5.6f, GRAVITY, 3, 3, level1.class, MUSIC);
+        Player player = new Player(3, 5.6f, GRAVITY, 3, 3, Level2.class, MUSIC);
         addObject(player, 55, 755);
 
         BrickWall brickWall = new BrickWall();
@@ -88,14 +92,39 @@ public class level1 extends World
         powerup6.setLocation(917,422);
         bomb bomb3 = new bomb(0);
         addObject(bomb3,632,632);
+        door.setLocation(1000,556);
+        door.setLocation(1048,764);
+        bomb.setLocation(616,490);
+        addObject(new bomb(GRAVITY),730,418);
+        removeObject(door);
+        trapDoor trapDoor2 = new trapDoor(0);
+        addObject(trapDoor2,288,656);
+        trapDoor2.setLocation(573,745);
+        trapDoor trapDoor3 = new trapDoor(0);
+        addObject(trapDoor3,804,368);
+        trapDoor.setLocation(416,519);
+        door door2 = new door();
+        addObject(door2,1048,351);
+        door2.setLocation(1166,332);
+        trapDoor trapDoor4 = new trapDoor(0);
+        addObject(trapDoor4,1130,408);
+        trapDoor4.setLocation(1138,404);
+        trapDoor4.setLocation(1148,400);
+        door2.setLocation(1172,344);
+        door2.setLocation(1166,366);
+        door2.setLocation(1165,339);
+        door2.setLocation(1156,370);
+        door2.setLocation(1148,347);
+        door2.setLocation(1167,310);
+        addObject(new bomb(GRAVITY),180,384);
     }
 
     private void spawn()
     {
-        if(Math.random() < 0.0025)
+        if(Math.random() < 0.00025)
         {
-            addObject(new Rock(GRAVITY), Greenfoot.getRandomNumber(1200), -30);
+            addObject(new Rock(GRAVITY),Greenfoot.getRandomNumber(2100), -30);
         }
-
+        
     }
 }
