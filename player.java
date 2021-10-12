@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
-    private Heart[] health;
+    private Health[] health;
     private Powerup[] powerup;
     private int healthCount;
     private int speed;
@@ -33,7 +33,8 @@ public class Player extends Actor
         GRAVITY = gravity;
         NEXT_LEVEL = nextLevel;
         MUSIC = music;
-
+        healthCount = 3;
+        health = new Health[healthCount];
         STANDING_IMAGE = getImage();
         WALK_ANIMATION = new GreenfootImage[] {
             new GreenfootImage("walk0.png"),
@@ -70,6 +71,10 @@ public class Player extends Actor
 
         if(Greenfoot.isKeyDown("right"))
         {
+            if(!MUSIC.isPlaying())
+            {
+               MUSIC.playLoop();
+            }
             if(isFacingLeft)
             {
                 mirrorImage();
@@ -152,16 +157,26 @@ public class Player extends Actor
             } 
             Greenfoot.setWorld(world);
         }
-
+        
+        if(isTouching(collectables.class))
+        {
+            removeTouching(collectables.class);
+            Greenfoot.playSound("collectable.wav");
+        }
         if(isTouching(Obstacle.class))
         {
             if(isTouching(trapDoor.class))
             {
             }
-            else 
+            else
             {
+                if(isTouching(bomb.class))
+                {
+                    Greenfoot.playSound("explosionSmall.wav");
+                }
                 removeTouching(Obstacle.class);
-                setLocation(0,25);
+                getWorld().removeObject(health[healthCount - 1]);
+                healthCount--;
             }
         }
 
@@ -180,11 +195,25 @@ public class Player extends Actor
         }
     }
 
-    private void gameOver(){}
+    private void gameOver(){
+        if(healthCount == 0)
+        {
+            Greenfoot.setWorld(new level1());
+        }
+    }
 
     private boolean isOnGround(){
         Actor ground = getOneObjectAtOffset (0, getImage().getHeight()/ 2, platform.class);
         return ground != null; 
     }
 
+    public void addedToWorld(World world)
+    {   
+        health[0] = new Health();
+        world.addObject(health[0], 30, 36);
+        health[1] = new Health();
+        world.addObject(health[1], 72, 36);
+        health[2] = new Health();
+        world.addObject(health[2], 114, 36);
+    }
 }

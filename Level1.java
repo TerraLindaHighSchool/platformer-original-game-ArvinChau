@@ -10,6 +10,11 @@ public class level1 extends World
 {
     private final float GRAVITY = 0.0667f;
     private final GreenfootSound MUSIC = new GreenfootSound("zapsplat_024.mp3");
+    private final int SPEED = 3;
+    private final float JUMP_FORCE = 5.6f;
+    private final int MAX_HEALTH = 3;
+    private final int MAX_POWERUP = 3;
+    private final  Class NEXT_LEVEL = Level2.class;
     /**
      * Constructor for objects of class level1.
      * 
@@ -19,13 +24,14 @@ public class level1 extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1); 
         prepare();
+
     }
-    
+
     public void act()
     {
         spawn();
     }
-    
+
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -37,9 +43,8 @@ public class level1 extends World
         door door = new door();
         addObject(door,574,40);
         addObject(new Floor(), 600, 800);
-        Player player = new Player(3, 5.6f, GRAVITY, 3, 3, Level2.class, MUSIC);
-        addObject(player, 55, 755);
-
+        Player player = new Player(SPEED, JUMP_FORCE, GRAVITY,MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC);
+        addObject(player, 25, 760);
         BrickWall brickWall = new BrickWall();
         addObject(brickWall,366,735);
         BrickWall brickWall2 = new BrickWall();
@@ -118,6 +123,17 @@ public class level1 extends World
         door2.setLocation(1148,347);
         door2.setLocation(1167,310);
         addObject(new bomb(GRAVITY),180,384);
+        door2.setLocation(550,31);
+        BrickWall brickWall11 = new BrickWall();
+        addObject(brickWall11,935,228);
+        trapDoor4.setLocation(1150,311);
+        trapDoor4.setLocation(1156,312);
+        brickWall11.setLocation(1118,280);
+        BrickWall brickWall12 = new BrickWall();
+        addObject(brickWall12,887,211);
+        trapDoor.setLocation(226,468);
+        BrickWall brickWall13 = new BrickWall();
+        addObject(brickWall13,661,173);
     }
 
     private void spawn()
@@ -126,6 +142,6 @@ public class level1 extends World
         {
             addObject(new Rock(GRAVITY),Greenfoot.getRandomNumber(2100), -30);
         }
-        
+
     }
 }
