@@ -26,9 +26,9 @@ public class Level2 extends World
         prepare();
     }
     private void prepare(){
-        setPaintOrder(Player.class, platform.class, Obstacle.class, collectables.class,
-            door.class, HUD.class);
-        door door = new door();
+        setPaintOrder(Player.class, Platform.class, Obstacle.class, Collectables.class,
+            Door.class, HUD.class);
+        Door door = new Door();
         addObject(door,574,40);
         addObject(new Floor(), 600, 800);
         Player player = new Player(SPEED, JUMP_FORCE, GRAVITY,MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC);
@@ -74,34 +74,34 @@ public class Level2 extends World
         addObject(powerup9,566,497);
         Powerup powerup10 = new Powerup();
         addObject(powerup10,446,566);
-        trapDoor trapDoor = new trapDoor(0);
+        TrapDoor trapDoor = new TrapDoor(0);
         addObject(trapDoor,1051,352);
-        bomb bomb = new bomb(0);
+        Bomb bomb = new Bomb(0);
         addObject(bomb,679,410);
-        bomb bomb2 = new bomb(0);
+        Bomb bomb2 = new Bomb(0);
         addObject(bomb2,524,490);
         bomb.setLocation(757,558);
         bomb2.setLocation(824,483);
         bomb2.setLocation(856,494);
         brickWall8.setLocation(910,458);
         powerup6.setLocation(917,422);
-        bomb bomb3 = new bomb(0);
+        Bomb bomb3 = new Bomb(0);
         addObject(bomb3,632,632);
         door.setLocation(1000,556);
         door.setLocation(1048,764);
         bomb.setLocation(616,490);
-        addObject(new bomb(GRAVITY),730,418);
+        addObject(new Bomb(GRAVITY),730,418);
         removeObject(door);
-        trapDoor trapDoor2 = new trapDoor(0);
+        TrapDoor trapDoor2 = new TrapDoor(0);
         addObject(trapDoor2,288,656);
         trapDoor2.setLocation(573,745);
-        trapDoor trapDoor3 = new trapDoor(0);
+        TrapDoor trapDoor3 = new TrapDoor(0);
         addObject(trapDoor3,804,368);
         trapDoor.setLocation(416,519);
-        door door2 = new door();
+        Door door2 = new Door();
         addObject(door2,1048,351);
         door2.setLocation(1166,332);
-        trapDoor trapDoor4 = new trapDoor(0);
+        TrapDoor trapDoor4 = new TrapDoor(0);
         addObject(trapDoor4,1130,408);
         trapDoor4.setLocation(1138,404);
         trapDoor4.setLocation(1148,400);
@@ -111,7 +111,7 @@ public class Level2 extends World
         door2.setLocation(1156,370);
         door2.setLocation(1148,347);
         door2.setLocation(1167,310);
-        addObject(new bomb(GRAVITY),180,384);
+        addObject(new Bomb(GRAVITY),180,384);
     }
     public void act(){
         

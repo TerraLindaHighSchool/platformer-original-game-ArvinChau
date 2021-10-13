@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BrickWall extends platform
+public class BrickWall extends Platform
 {
     /**
      * Act - do whatever the BrickWall wants to do. This method is called whenever

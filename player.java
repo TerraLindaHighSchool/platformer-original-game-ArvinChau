@@ -142,7 +142,7 @@ public class Player extends Actor
     }
 
     private void onCollision(){
-        if(isTouching(door.class))
+        if(isTouching(Door.class))
         {
             World world = null;
             try 
@@ -158,19 +158,19 @@ public class Player extends Actor
             Greenfoot.setWorld(world);
         }
         
-        if(isTouching(collectables.class))
+        if(isTouching(Collectables.class))
         {
-            removeTouching(collectables.class);
+            removeTouching(Collectables.class);
             Greenfoot.playSound("collectable.wav");
         }
         if(isTouching(Obstacle.class))
         {
-            if(isTouching(trapDoor.class))
+            if(isTouching(TrapDoor.class))
             {
             }
             else
             {
-                if(isTouching(bomb.class))
+                if(isTouching(Bomb.class))
                 {
                     Greenfoot.playSound("explosionSmall.wav");
                 }
@@ -181,7 +181,7 @@ public class Player extends Actor
         }
 
         // hit platform but not ground
-        if(isTouching(platform.class) && !isOnGround())
+        if(isTouching(Platform.class) && !isOnGround())
         {
             yVelocity = -1;
             fall();
@@ -198,12 +198,12 @@ public class Player extends Actor
     private void gameOver(){
         if(healthCount == 0)
         {
-            Greenfoot.setWorld(new level1());
+            Greenfoot.setWorld(new Level1());
         }
     }
 
     private boolean isOnGround(){
-        Actor ground = getOneObjectAtOffset (0, getImage().getHeight()/ 2, platform.class);
+        Actor ground = getOneObjectAtOffset (0, getImage().getHeight()/ 2, Platform.class);
         return ground != null; 
     }
 

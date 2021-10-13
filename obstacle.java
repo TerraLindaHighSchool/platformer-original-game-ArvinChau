@@ -14,7 +14,7 @@ public class Obstacle extends Actor
     }
 
     protected boolean isOnGround(){
-        Actor ground = getOneObjectAtOffset (0, getImage().getHeight()/ 2, platform.class);
+        Actor ground = getOneObjectAtOffset (0, getImage().getHeight()/ 2, Platform.class);
         return ground != null;
     }
     // Some child objects fall. This method removes the object
