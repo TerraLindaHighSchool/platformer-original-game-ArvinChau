@@ -141,7 +141,8 @@ public class Player extends Actor
         frame++;
     }
 
-    private void onCollision(){
+    private void onCollision()
+    {
         if(isTouching(Door.class))
         {
             World world = null;
@@ -177,6 +178,7 @@ public class Player extends Actor
                 removeTouching(Obstacle.class);
                 getWorld().removeObject(health[healthCount - 1]);
                 healthCount--;
+                
             }
         }
 
@@ -210,10 +212,10 @@ public class Player extends Actor
     public void addedToWorld(World world)
     {   
         health[0] = new Health();
-        world.addObject(health[0], 30, 36);
+        world.addObject(health[0], 1150, 36);
         health[1] = new Health();
-        world.addObject(health[1], 72, 36);
+        world.addObject(health[1], 1100, 36);
         health[2] = new Health();
-        world.addObject(health[2], 114, 36);
+        world.addObject(health[2], 1050, 36);
     }
 }

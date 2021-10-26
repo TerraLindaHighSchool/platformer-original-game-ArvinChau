@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class level1 here.
+ * Write a description of class Level4 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Level1 extends World
+public class Level4 extends World
 {
     private final float GRAVITY = 0.0667f;
     private final GreenfootSound MUSIC = new GreenfootSound("zapsplat_024.mp3");
@@ -14,37 +14,27 @@ public class Level1 extends World
     private final float JUMP_FORCE = 5.6f;
     private final int MAX_HEALTH = 3;
     private final int MAX_POWERUP = 3;
-    private final  Class NEXT_LEVEL = Level2.class;
+    private final  Class NEXT_LEVEL = Win.class;
     /**
-     * Constructor for objects of class level1.
+     * Constructor for objects of class Level4.
      * 
      */
-    public Level1()
+    public Level4()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1); 
         prepare();
-
     }
-
-    public void act()
-    {
-        spawn();
-    }
-
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    private void prepare()
-    {
+    
+    private void prepare(){
         setPaintOrder(Player.class, Platform.class, Obstacle.class, Collectables.class,
             Door.class, HUD.class);
         Door door = new Door();
         addObject(door,574,40);
         addObject(new Floor(), 600, 800);
         Player player = new Player(SPEED, JUMP_FORCE, GRAVITY,MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC);
-        addObject(player, 25, 760);
+        addObject(player, 55, 755);
+
         BrickWall brickWall = new BrickWall();
         addObject(brickWall,366,735);
         BrickWall brickWall2 = new BrickWall();
@@ -115,83 +105,108 @@ public class Level1 extends World
         door2.setLocation(1148,347);
         door2.setLocation(1167,310);
 
-        door2.setLocation(550,31);
-        BrickWall brickWall11 = new BrickWall();
-        addObject(brickWall11,935,228);
-        trapDoor4.setLocation(1150,311);
-        trapDoor4.setLocation(1156,312);
-        brickWall11.setLocation(1118,280);
-        BrickWall brickWall12 = new BrickWall();
-        addObject(brickWall12,887,211);
-        trapDoor.setLocation(226,468);
-        BrickWall brickWall13 = new BrickWall();
-        addObject(brickWall13,661,173);
-
-        Brick brick = new Brick();
-        addObject(brick,176,362);
-        removeObject(brickWall6);
-        Brick brick2 = new Brick();
-        addObject(brick2,445,530);
-        powerup9.setLocation(562,460);
-        brick2.setLocation(576,499);
-        powerup9.setLocation(565,478);
-        trapDoor.setLocation(210,434);
-        Brick brick3 = new Brick();
-        addObject(brick3,688,320);
-        removeObject(brick3);
-        brick2.setLocation(397,523);
-        removeObject(brickWall5);
-        removeObject(trapDoor2);
-        removeObject(brickWall2);
-        removeObject(brickWall3);
-        removeObject(brickWall7);
-        removeObject(brickWall4);
-        removeObject(brickWall);
         removeObject(brickWall10);
-        removeObject(brickWall8);
-        removeObject(trapDoor3);
-        removeObject(brickWall13);
-        removeObject(trapDoor);
+        removeObject(brickWall4);
         removeObject(trapDoor4);
         removeObject(brickWall9);
-        removeObject(brickWall11);
+        removeObject(brickWall8);
+        removeObject(brickWall7);
+        removeObject(trapDoor3);
+        removeObject(brickWall6);
+        removeObject(trapDoor);
+        removeObject(brickWall5);
+        removeObject(brickWall2);
+        removeObject(brickWall3);
+        removeObject(trapDoor2);
+        removeObject(brickWall);
+        door2.setLocation(1180,79);
+        BrickWall brickWall11 = new BrickWall();
+        addObject(brickWall11,1144,162);
+        BrickWall brickWall12 = new BrickWall();
+        addObject(brickWall12,1041,161);
+        brickWall12.setLocation(1039,158);
+        brickWall12.setLocation(1055,165);
+        brickWall12.setLocation(1078,162);
+        brickWall12.setLocation(1065,161);
         removeObject(brickWall12);
-        door2.setLocation(1169,204);
-        brick.setLocation(841,158);
-        brick.setLocation(800,168);
-        removeObject(brick2);
-        SmBrickWall smBrickWall = new SmBrickWall();
-        addObject(smBrickWall,180,572);
-        smBrickWall.setLocation(66,629);
-        SmBrickWall smBrickWall2 = new SmBrickWall();
-        addObject(smBrickWall2,278,522);
-        SmBrickWall smBrickWall3 = new SmBrickWall();
-        addObject(smBrickWall3,82,458);
-        smBrickWall3.setLocation(72,413);
+        removeObject(brickWall11);
+        Brick brick = new Brick();
+        addObject(brick,1194,144);
+        brick.setLocation(1161,122);
+        brick.setLocation(1142,134);
+        brick.setLocation(1103,152);
+        door2.setLocation(1170,94);
+        Brick brick2 = new Brick();
+        addObject(brick2,532,311);
+        brick2.setLocation(1066,670);
+        brick2.setLocation(943,662);
+        BrickWall brickWall13 = new BrickWall();
+        addObject(brickWall13,526,742);
         TrapDoor trapDoor5 = new TrapDoor(0);
-        addObject(trapDoor5,516,436);
-        TrapDoor trapDoor6 = new TrapDoor(0);
-        addObject(trapDoor6,753,352);
-        TrapDoor trapDoor7 = new TrapDoor(0);
-        addObject(trapDoor7,320,301);
+        addObject(trapDoor5,656,511);
+        powerup9.setLocation(489,409);
         BrickWall brickWall14 = new BrickWall();
-        addObject(brickWall14,23,279);
-        SmBrickWall smBrickWall4 = new SmBrickWall();
-        addObject(smBrickWall4,278,182);
+        addObject(brickWall14,533,509);
+        brickWall14.setLocation(535,509);
+        brickWall14.setLocation(519,512);
+        brickWall14.setLocation(539,507);
+        brickWall14.setLocation(549,500);
+        brickWall14.setLocation(552,498);
+        brickWall14.setLocation(547,502);
+        brickWall14.setLocation(684,503);
+        trapDoor5.setLocation(866,558);
+        trapDoor5.setLocation(1082,498);
+        Brick brick3 = new Brick();
+        addObject(brick3,417,483);
+        brick3.setLocation(1,473);
+        brick3.setLocation(0,497);
+        brick3.setLocation(46,478);
+        brick3.setLocation(104,474);
+        brick3.setLocation(62,482);
+        brickWall14.setLocation(856,571);
+        brickWall14.setLocation(732,542);
+        brickWall14.setLocation(598,556);
+        TrapDoor trapDoor6 = new TrapDoor(0);
+        addObject(trapDoor6,843,398);
+        powerup6.setLocation(938,475);
+        BrickWall brickWall15 = new BrickWall();
+        addObject(brickWall15,420,358);
+        TrapDoor trapDoor7 = new TrapDoor(0);
+        addObject(trapDoor7,678,304);
         TrapDoor trapDoor8 = new TrapDoor(0);
-        addObject(trapDoor8,995,318);
-        smBrickWall4.setLocation(233,225);
-        trapDoor7.setLocation(400,333);
-        smBrickWall4.setLocation(314,228);
-        trapDoor7.setLocation(342,356);
+        addObject(trapDoor8,822,216);
+        BrickWall brickWall16 = new BrickWall();
+        addObject(brickWall16,266,254);
+        brick3.setLocation(216,523);
+        BrickWall brickWall17 = new BrickWall();
+        addObject(brickWall17,498,200);
+        BrickWall brickWall18 = new BrickWall();
+        addObject(brickWall18,704,146);
+        powerup8.setLocation(252,463);
+        powerup9.setLocation(152,468);
+        powerup10.setLocation(932,113);
+        powerup7.setLocation(1004,109);
+        powerup6.setLocation(847,346);
+        powerup5.setLocation(692,272);
+        powerup4.setLocation(623,504);
+        powerup3.setLocation(845,619);
+        powerup2.setLocation(530,712);
+        powerup.setLocation(427,315);
+        powerup5.setLocation(696,100);
+        powerup10.setLocation(928,117);
+        powerup6.setLocation(502,166);
     }
 
+    public void act(){
+        spawn();
+    }
+    
     private void spawn()
     {
-        if(Math.random() < 0.0025)
+        if(Math.random() < 0.0005)
         {
             addObject(new Rock(GRAVITY),Greenfoot.getRandomNumber(2100), -30);
         }
-
+        
     }
 }
