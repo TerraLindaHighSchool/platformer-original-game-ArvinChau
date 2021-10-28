@@ -13,7 +13,7 @@ public class Level1 extends World
     private final int SPEED = 3;
     private final float JUMP_FORCE = 5.6f;
     private final int MAX_HEALTH = 3;
-    private final int MAX_POWERUP = 3;
+    private final int MAX_POWERUP = 20;
     private final  Class NEXT_LEVEL = Level2.class;
     /**
      * Constructor for objects of class level1.
@@ -184,6 +184,18 @@ public class Level1 extends World
         trapDoor7.setLocation(400,333);
         smBrickWall4.setLocation(314,228);
         trapDoor7.setLocation(342,356);
+        brick.setLocation(717,188);
+        powerup10.setLocation(292,476);
+        powerup.setLocation(93,570);
+        powerup3.setLocation(520,402);
+        powerup9.setLocation(365,317);
+        powerup8.setLocation(732,326);
+        powerup5.setLocation(990,292);
+        powerup5.setLocation(986,282);
+        powerup6.setLocation(331,197);
+        powerup4.setLocation(40,233);
+        powerup2.setLocation(49,583);
+        powerup7.setLocation(679,132);
     }
 
     private void spawn()

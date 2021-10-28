@@ -214,6 +214,7 @@ public class Level2 extends World
         brickWall11.setLocation(1170,203);
         powerup7.setLocation(1176,155);
         smBrickWall4.setLocation(853,590);
+        smBrickWall11.setLocation(408,91);
     }
 
     public void act(){

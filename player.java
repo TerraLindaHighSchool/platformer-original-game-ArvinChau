@@ -11,6 +11,7 @@ public class Player extends Actor
     private Health[] health;
     private Powerup[] powerup;
     private int healthCount;
+    private int powerupCount;
     private int speed;
     private int walkIndex;
     private int frame;
@@ -34,7 +35,10 @@ public class Player extends Actor
         NEXT_LEVEL = nextLevel;
         MUSIC = music;
         healthCount = 3;
+        int PowerupMax = maxPowerUp;
+        powerupCount = 0;
         health = new Health[healthCount];
+        powerup = new Powerup[PowerupMax];
         STANDING_IMAGE = getImage();
         WALK_ANIMATION = new GreenfootImage[] {
             new GreenfootImage("walk0.png"),
@@ -73,7 +77,7 @@ public class Player extends Actor
         {
             if(!MUSIC.isPlaying())
             {
-               MUSIC.playLoop();
+                MUSIC.playLoop();
             }
             if(isFacingLeft)
             {
@@ -158,11 +162,14 @@ public class Player extends Actor
             } 
             Greenfoot.setWorld(world);
         }
-        
+
         if(isTouching(Collectables.class))
         {
             removeTouching(Collectables.class);
             Greenfoot.playSound("collectable.wav");
+            getWorld().removeObject(powerup[powerupCount + 1]);
+            powerupCount++;
+            System.out.println(powerupCount);
         }
         if(isTouching(Obstacle.class))
         {
@@ -178,7 +185,7 @@ public class Player extends Actor
                 removeTouching(Obstacle.class);
                 getWorld().removeObject(health[healthCount - 1]);
                 healthCount--;
-                
+
             }
         }
 
@@ -200,7 +207,7 @@ public class Player extends Actor
     private void gameOver(){
         if(healthCount == 0)
         {
-            Greenfoot.setWorld(new Level1());
+            Greenfoot.setWorld(new Lose());
         }
     }
 
@@ -217,5 +224,7 @@ public class Player extends Actor
         world.addObject(health[1], 1100, 36);
         health[2] = new Health();
         world.addObject(health[2], 1050, 36);
+        powerup[1] = new Powerup();
+        world.addObject(powerup[1], 1000,36);
     }
 }

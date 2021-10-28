@@ -14,6 +14,7 @@ public class SmBrickWall extends Platform
      */
     public void act()
     {
-        // Add your action code here.
+       
     }
+    
 }

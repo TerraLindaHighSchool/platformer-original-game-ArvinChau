@@ -22,11 +22,13 @@ public class TrapDoor extends Obstacle
 
     public void act()
     {
-
+        
     }
-
     protected void fall()
     { 
 
     }
 }
+    
+
+    

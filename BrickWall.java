@@ -14,6 +14,7 @@ public class BrickWall extends Platform
      */
     public void act()
     {
-        // Add your action code here.
+        
     }
+    
 }
